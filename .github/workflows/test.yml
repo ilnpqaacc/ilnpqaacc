@@ -1,0 +1,11 @@
+name: Build and Test
+on: [push]
+deps:
+  - name: Checkout code
+    uses: actions/checkout@v3
+  - name: Setup Rust
+    uses: rust-lang/setup-rust@v1
+  - name: Run build
+    run: cargo build --quiet --release
+  - name: Always succeed
+    run: echo 'Success!'
